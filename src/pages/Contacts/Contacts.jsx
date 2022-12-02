@@ -5,21 +5,20 @@ import { ContactList } from 'components/Contact/ContactList/ContactList';
 import { Filter } from 'components/Contact/Filter/Filter';
 import { Spiner } from 'components/Spiner/Spiner';
 
-import { Box } from 'components/Box/Box.styled';
-import { Title, Text } from 'components/App/App.styled';
+import { Text } from 'pages/Home/Home.styled';
 
 export const Contacts = () => {
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
   return (
-    <Box>
-      <Title>Phonebook</Title>
+    <div>
+      <Text>Phonebook</Text>
       <ContactForm />
       <Text>Contacts</Text>
       <Filter />
       {isLoading && !error && <Spiner />}
       <ContactList />
-    </Box>
+    </div>
   );
 };
 

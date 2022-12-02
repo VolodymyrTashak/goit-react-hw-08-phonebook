@@ -1,16 +1,17 @@
 import { Outlet } from 'react-router-dom';
-import { AppBar } from 'components/AppBar/AppBar';
 import { Suspense } from 'react';
 
-import { Box } from './Layout.styled';
+import { AppBar } from 'components/AppBar/AppBar';
+
+import { LayoutBox } from './Layout.styled';
 
 export const Layout = () => {
   return (
-    <Box>
+    <LayoutBox>
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-    </Box>
+    </LayoutBox>
   );
 };

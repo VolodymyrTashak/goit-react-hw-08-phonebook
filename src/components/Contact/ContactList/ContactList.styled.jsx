@@ -1,35 +1,51 @@
 import styled from 'styled-components';
 
-export const ContactItem = styled.li`
-  list-style: none;
-  :not(:last-child) {
-    margin-bottom: 10px;
+export const ContactLists = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 50px;
+  margin-right: 300px;
+  list-style-type: none;
+ 
   }
+`;
+
+export const ContactItem = styled.li`
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
 `;
 
 export const ContactInfo = styled.span`
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 700;
-  color: #dbd5d5;
-  :not(:last-child) {
-    margin-right: 10px;
-  }
+  margin: 0px 20px;
+  color: #565678;
 `;
 
 export const ContactBtn = styled.button`
-  font-size: 18px;
-  margin-left: 15px;
-  border: none;
-  background-color: #e7c587;
-  border-radius: 20px;
-  height: 40px;
-  width: 70px;
-  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 15px 30px;
+  color: white;
+  border: #565678;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px #565678 inset, 0 0 0 0 #565678;
+  letter-spacing: 2px;
+  transition: 0.15s ease-in-out;
   :hover {
-    background-color: #a06e49ba;
-    color: #dbd5d5;
-    transform: scale(1.2);
-    transition: 500ms;
+    color: #565678;
+    box-shadow: 0 0 10px 0 #565678 inset, 0 0 10px 4px #565678;
+  }
+  :focus {
+    color: #565678;
+    box-shadow: 0 0 10px 0 #565678 inset, 0 0 10px 4px #565678;
+  }
+  &.active {
+    color: #565678;
+    box-shadow: 0 0 10px 0 #565678 inset, 0 0 10px 4px #565678;
   }
 `;
