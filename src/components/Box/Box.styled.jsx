@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Box = styled.div`
+export const Box = styled.div`
   text-align: center;
   padding-left: 300px;
   padding-right: 300px;
