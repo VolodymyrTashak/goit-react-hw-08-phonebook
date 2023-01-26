@@ -1,6 +1,6 @@
 import { RegisterForm } from 'components/Auth/RegisterForm/RegisterForm';
 
-import { Text } from 'pages/Home/Home.styled';
+import { Text } from 'pages/Register/Register.styled';
 
 export const Register = () => {
   return (
