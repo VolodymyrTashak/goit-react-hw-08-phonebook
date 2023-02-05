@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import Notiflix from 'notiflix';
 
 import { register } from 'redux/auth/operations';
 
@@ -17,6 +18,11 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
+    if (form.password.value.length !== 7) {
+      Notiflix.Notify.warning(
+        'Please, the password must have more than 7 symbols!'
+      );
+    }
     form.reset();
   };
 
@@ -25,15 +31,15 @@ export const RegisterForm = () => {
       <FormBox>
         <Label>
           Username
-          <Input type="text" name="name" />
+          <Input type="text" name="name" placeholder='Adrian Cross' />
         </Label>
         <Label>
           Email
-          <Input type="email" name="email" />
+          <Input type="email" name="email" placeholder='across@mail.com' />
         </Label>
         <Label>
           Password
-          <Input type="password" name="password" />
+          <Input type="password" name="password" placeholder='examplepwd12345' />
         </Label>
         <Button type="submit">Register</Button>
       </FormBox>
