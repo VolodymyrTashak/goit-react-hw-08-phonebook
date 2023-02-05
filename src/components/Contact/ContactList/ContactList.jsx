@@ -5,6 +5,7 @@ import { deleteContact, fetchContacts } from 'redux/contacts/operations';
 import { getContact, getFilteredContact } from 'redux/contacts/selectors';
 
 import {
+  ContactWrap,
   ContactLists,
   ContactItem,
   ContactBtn,
@@ -26,7 +27,8 @@ export const ContactList = () => {
   }, [dispatch]);
 
   return (
-    <ContactLists>
+    <ContactWrap>
+      <ContactLists>
       {isLoading && <p>Loading</p>}
       {error && <p>{error}</p>}
       {formatting.map(({ id, name, number }) => (
@@ -44,5 +46,7 @@ export const ContactList = () => {
         </ContactItem>
       ))}
     </ContactLists>
+    </ContactWrap>
+    
   );
 };
